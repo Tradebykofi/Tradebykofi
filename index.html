@@ -1,1 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment Required</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 40px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+      width: 100%;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .emoji {
+      font-size: 2.8em;
+      animation: bounce 2s infinite;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      animation: slideIn 1.5s ease-in-out;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      color: #ddd;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 0.9em;
+      color: #aaa;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #00ffc8;
+      color: #000;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      border: none;
+      transition: 0.3s;
+      animation: fadeIn 2.3s ease-in-out;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #00ffc8;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #111;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: left;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+      animation: fadeInUp 0.5s ease;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 15px;
+    }
+
+    .modal-content p {
+      margin-bottom: 10px;
+      color: #eee;
+    }
+
+    .close {
+      float: right;
+      font-size: 1.2em;
+      cursor: pointer;
+      color: #ff6b6b;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="emoji">🤝</div>
+    <h1>Payment Required</h1>
+    <p>This website is locked until payment is made.<br>Kindly settle the developer's dues.</p>
+    <button class="btn" onclick="openModal()">Pay Now</button>
+    <div class="footer">This site was built with time, skill & love. Respect the hustle.</div>
+  </div>
+
+  <!-- Payment Modal -->
+  <div class="modal" id="paymentModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Payment Details</h2>
+      <p><strong>TELECEL:</strong> 0507010941 (Name: KELVIN OSEI)</
+
+      <p>After payment, contact me to unlock the site.0507010941</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('paymentModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('paymentModal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
